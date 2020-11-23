@@ -10,13 +10,16 @@ chrome.runtime.onMessage.addListener(function handleMessage(
     const submitButton = document.querySelector('[type="submit"]');
     if (submitButton) {
       submitButton.click();
-      sendResponse({
-        action: "phab.autoLandFired",
-      });
+      setTimeout(() => {
+        sendResponse({
+          action: "phab.autoLandFired",
+        });
+      }, 3000);
     } else {
       sendResponse({
         action: "phab.autoLandNotSuccessful",
       });
     }
   }
+  return true;
 });
