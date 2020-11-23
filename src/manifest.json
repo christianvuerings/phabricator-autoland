@@ -15,6 +15,7 @@
     "js": ["lib/phab.js", "lib/contentScript.js"]
   }],
   "options_page": "options.html",
+  "content_security_policy": "script-src 'self' https://ssl.google-analytics.com; object-src 'self'",
   "icons": {
     "16": "phabricator-autoland-16.png",
     "32": "phabricator-autoland-32.png",
