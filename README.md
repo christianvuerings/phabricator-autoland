@@ -1,8 +1,10 @@
 # Phabricator Autoland
 
-## Description
-
 Autoland Phabricator revisions which are ready to land
+
+## Install
+
+* **Chrome** extension
 
 ## Development
 
