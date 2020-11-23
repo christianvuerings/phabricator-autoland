@@ -1,4 +1,4 @@
-# Phabricator Autoland
+# Phabricator Autoland <img src="./src/phabricator-autoland.svg" alt="Logo" width="20">
 
 Autoland Phabricator revisions which are ready to land
 
