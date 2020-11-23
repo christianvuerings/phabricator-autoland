@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='UTF-8' />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        box-sizing: border-box;
+      }
+      *, *:before, *:after {
+        box-sizing: inherit;
+      }
+
+      body {
+        background: #2a2a2d;
+        color: #fff;
+        display: flex;
+        justify-content: center;
+      }
+
+      .container {
+        max-width: 600px;
+        width: 100%;
+        margin-bottom: 60px;
+      }
+
+      .container .heading {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        padding: 60px 0;
+      }
+      .container .heading .logo {
+        max-width: 160px;
+      }
+      .container h1 {
+        font-size: 36px;
+        margin-top: 20px;
+        text-align: center;
+      }
+      .container .content {
+        display: none;
+      }
+      .container .contentItem {
+        display: flex;
+        margin-bottom: 20px;
+      }
+
+      .label {
+        font-size: 20px;
+      }
+
+      .textfield {
+        border: none;
+        border-radius: 4px;
+        padding: 8px;
+        font-size: 20px;
+      }
+      .contentItemTextfield {
+        flex-direction: column;
+      }
+      .contentItemTextfield .label {
+        margin-bottom: 8px;
+      }
+
+      .contentItemCheckBox {
+        align-items: center;
+      }
+      .contentItemCheckBox .label {
+        margin-inline-start: 8px;
+      }
+      .submitButton {
+        background: #d6336c;
+        border-radius: 64px;
+        border: none;
+        color: white;
+        font-size: 20px;
+        font-weight: bold;
+        margin-top: 40px;
+        padding: 16px 8px;
+        width: 100%;
+      }
+
+      .status {
+        background: rgba(255,255,255, 0.2);
+        display: none;
+        position: absolute;
+        right: 0;
+        top: 0;
+        padding: 36px;
+        font-size: 20px;
+        max-width: 300px;
+        z-index: 1;
+      }
+
+    </style>
+  </head>
+<body>
+  <div class="container">
+    <div class="heading">
+      <svg class="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+        <path d="M0 64C0 28.654 28.654 0 64 0c35.346 0 64 28.654 64 64 0 35.346-28.654 64-64 64-35.346 0-64-28.654-64-64z" fill="#d6336c"/>
+        <path d="M57.362 42.202c.316-.136 4.945 4.712 4.945 4.712l2.957.045s4.358-4.893 4.674-4.758l4.538 2.085c.299.128.275 5.895.272 6.535v.057l2.122 2.107s6.525-.203 6.66.114l2.145 4.53c.136.318-4.764 4.804-4.764 4.804l.023 2.945s4.877 4.44 4.719 4.69l-1.83 4.485c-.112.317-6.705.113-6.705.113l-2.055 2.062s.362 7.136.046 7.272l-4.516 1.7c-.294.113-4.922-5.28-4.922-5.28l-2.958-.044s-4.358 5.46-4.674 5.323l-4.538-1.88c-.316-.113-.27-7.318-.27-7.318l-2.123-2.107s-6.525.204-6.66-.113l-2.146-4.53c-.128-.301 4.262-4.343 4.725-4.768l.04-.036-.023-2.922s-4.877-4.44-4.742-4.758l1.829-4.486c.113-.294 6.706-.09 6.706-.09l2.054-2.062s-.36-6.434-.045-6.547l4.516-1.88zm6.267 14.514l-.239.008c-3.906.158-6.954 3.443-6.796 7.317.158 3.874 3.5 6.887 7.406 6.706 3.906-.181 6.954-3.466 6.796-7.34-.158-3.852-3.5-6.865-7.406-6.683l.239-.008zm52.595-1.896L94.323 32.845l-.023.023c-16.956-16.607-44.118-16.493-60.916.362-11.493 11.554-6.277 6.32-21.608 21.59-5.035 5.053-5.035 13.299 0 18.351 15.782 15.723 10.477 10.421 21.992 21.976l.022-.023c16.956 16.606 44.118 16.516 60.917-.362 11.515-11.532 6.299-6.321 21.517-21.59 5.035-5.053 5.035-13.3 0-18.352zM39.706 88.418c-13.457-13.48-13.457-35.342 0-48.822 13.434-13.502 35.222-13.48 48.679 0 13.434 13.48 13.456 35.342 0 48.845-13.457 13.48-35.223 13.457-48.68-.023z" fill="#fff"/>
+      </svg>
+
+      <h1>Phabricator Autoland: Options</h1>
+    </div>
+
+    <div class="content" id="content">
+      <form id="contentForm">
+        <div class="contentItem contentItemTextfield">
+          <label class="label" for="phabricatorBaseUrl">Phabricator Base URL</label>
+          <input class="textfield" id="phabricatorBaseUrl" type="text" value="https://phabricator.pinadmin.com/">
+        </div>
+        <div class="contentItem contentItemCheckBox">
+          <input type="checkbox" id="enableAutoLand" checked="checked">
+          <label class="label" for="enableAutoLand">Enable Autoland</label>
+        </div>
+        <div class="contentItem contentItemCheckBox" id="requireAutoLandHashtagContainer">
+          <input type="checkbox" id="requireAutoLandHashtag" checked="checked">
+          <label class="label" for="requireAutoLandHashtag">Require <code>#autoland</code> hashtag in the diff summary</label>
+        </div>
+
+        <button type="submit" id="submit" class="submitButton">Save Options</button>
+
+        <div class="status" id="status"></div>
+      </form>
+    </div>
+  </div>
+  <script src="lib/phab.js"></script>
+  <script src="lib/options.js"></script>
+</body>
+</html>

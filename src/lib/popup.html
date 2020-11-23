@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='UTF-8' />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        background: #2a2a2d;
+        color: #fff;
+
+        width: 300px;
+      }
+
+      .topNav {
+        display: flex;
+      }
+      .button {
+        all: unset;
+        cursor: pointer;
+      }
+      .button:hover {
+        background-color: #ffffff20;
+      }
+      .emoji-button {
+        padding: 4px 14px 4px 8px;
+      }
+      .emoji-link {
+        padding: 6px 14px 6px 8px;
+      }
+      .heading {
+        font-size: 14px;
+        font-weight: normal;
+        padding: 8px
+      }
+      .subHeading {
+        font-size: 12px;
+        font-weight: normal;
+        padding: 4px 8px;
+        margin-top: 8px;
+      }
+      .message {
+        color: rgba(255,255,255, 0.5);
+        font-size: 12px;
+        padding: 4px 8px;
+      }
+      .message a {
+        color: rgba(255,255,255, 0.5);;
+      }
+      .messageError {
+        color: #ff1528;
+        font-weight: bold;
+        padding: 4px 8px;
+      }
+      .diff {
+        align-items: center;
+        display: flex;
+        list-style-type: none;
+      }
+      .diff .status{
+        padding: 0 8px
+      }
+      .diff a {
+        color: #fff;
+        text-decoration: none;
+        padding: 8px;
+
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        min-width: 0;
+        width: 100%;
+      }
+      .diff a:hover {
+        background-color: #ffffff20;
+      }
+    </style>
+  </head>
+<body>
+  <div id="content"></div>
+  <script src="phab.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

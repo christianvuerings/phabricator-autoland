@@ -1,0 +1,33 @@
+{
+  "name": "Phabricator Autoland",
+  "version": "0.0.1",
+  "manifest_version": 2,
+  "description": "Autoland Phabricator revisions which are ready to land",
+  "background": {
+    "page":  "lib/background.html"
+  },
+  "browser_action": {
+    "default_icon": "phabricator-autoland-128.png",
+    "default_popup": "lib/popup.html"
+  },
+  "content_scripts": [{
+    "matches": ["<all_urls>"],
+    "js": ["lib/phab.js", "lib/contentScript.js"]
+  }],
+  "options_page": "options.html",
+  "icons": {
+    "16": "phabricator-autoland-16.png",
+    "32": "phabricator-autoland-32.png",
+    "48": "phabricator-autoland-48.png",
+    "64": "phabricator-autoland-64.png",
+    "128": "phabricator-autoland-128.png"
+  },
+  "permissions" : [
+    "<all_urls>",
+    "idle",
+    "tabs",
+    "webRequest",
+    "storage"
+  ]
+
+}

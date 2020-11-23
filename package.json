@@ -1,0 +1,31 @@
+{
+  "name": "phabricator-autoland",
+  "version": "0.0.1",
+  "description": "Autoland Phabricator revisions which are ready to land",
+  "main": "index.js",
+  "scripts": {
+    "dev": "chokidar \"src/\" -c \"npm run build\"",
+    "build": "sh build.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/christianvuerings/phabricator-autoland.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/christianvuerings/phabricator-autoland/issues"
+  },
+  "homepage": "https://github.com/christianvuerings/phabricator-autoland#readme",
+  "dependencies": {
+    "chokidar-cli": "^2.1.0",
+    "eslint-plugin-prettier": "^3.1.4"
+  },
+  "devDependencies": {
+    "eslint": "^7.2.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-prettier": "^6.15.0",
+    "eslint-plugin-import": "^2.22.1",
+    "prettier": "2.2.0"
+  }
+}
