@@ -2,6 +2,8 @@
 
 Autoland Phabricator revisions which are ready to land
 
+<img src="./assets/phabricator-autoland-animated.gif" alt="Animated gif showing the functionality of Phabricator Autoland" width="400">
+
 ## Install
 
 * **Chrome** extension
