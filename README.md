@@ -6,9 +6,7 @@ Autoland Phabricator revisions which are ready to land
 
 ## Install
 
-Chrome Web Store approval is in `Pending review`, for now follow the steps in `Development`.
-
-<!-- * **Chrome** extension -->
+* [**Chrome** extension](https://chrome.google.com/webstore/detail/phabricator-autoland/onjafannflphlocdocbajjmnhanhhjil)
 
 ## Development
 
