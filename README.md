@@ -27,6 +27,16 @@ npm install
 
 ## FAQ
 
+### As a reviewer, how do I ensure a diff doesn't land when it still requires changes?
+
+Make sure to set the status of the diff to `Request Changes`. That way, the autoland feature won't kick in.
+
+### My diff is ✅ and has the `#autoland` tag, why is it not landing?
+
+* Only when you've been idle for more than 15 seconds (no keyboard or mouse interactions), will the auto land feature execute. We use [`chrome.idle`](https://developer.chrome.com/docs/extensions/reference/idle/) under the hood.
+* Only repositories which have the experimental `Land Revision` feature enabled will be able to autoland diffs. You can check whether this is the case by going to a diff and verifying you see a `Land Revision` link.<br />
+<img src="./assets/phabricator-land-revision-link-on-diff.png" alt="Land Revision link on a diff">
+
 ### My diff has a ❌ next to it, what is going on?
 
 Hover over the icon to get more information. For every diff we perform these checks:
