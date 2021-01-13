@@ -4,9 +4,11 @@ Autoland Phabricator revisions which are ready to land
 
 <img src="./assets/phabricator-autoland-animated.gif" alt="Animated gif showing the functionality of Phabricator Autoland" width="400">
 
-## Install
+## Workflow
 
-* [**Chrome** extension](https://chrome.google.com/webstore/detail/phabricator-autoland/onjafannflphlocdocbajjmnhanhhjil)
+* Install the [**Phabricator Autoland** extension](https://chrome.google.com/webstore/detail/phabricator-autoland/onjafannflphlocdocbajjmnhanhhjil)
+* Add `#autoland` to the diff summary
+* Once the review is approved and builds have passed, the diff will autoland
 
 ## Development
 
