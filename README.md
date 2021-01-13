@@ -27,13 +27,9 @@ npm install
 
 ## FAQ
 
-### As a reviewer, how do I ensure a diff doesn't land when it still requires changes?
-
-Make sure to set the status of the diff to `Request Changes`. That way, the autoland feature won't kick in.
-
 ### My diff is ✅ and has the `#autoland` tag, why is it not landing?
 
-* Only when you've been idle for more than 15 seconds (no keyboard or mouse interactions), will the auto land feature execute. We use [`chrome.idle`](https://developer.chrome.com/docs/extensions/reference/idle/) under the hood.
+* Only when you've been idle for more than 15 seconds (no keyboard or mouse interactions), will the auto land feature kick in. See [`chrome.idle`](https://developer.chrome.com/docs/extensions/reference/idle/) for more information.
 * Only repositories which have the experimental `Land Revision` feature enabled will be able to autoland diffs. You can check whether this is the case by going to a diff and verifying you see a `Land Revision` link.<br />
 <img src="./assets/phabricator-land-revision-link-on-diff.png" alt="Land Revision link on a diff">
 
@@ -43,6 +39,25 @@ Hover over the icon to get more information. For every diff we perform these che
 * Builds pass
 * Active landing operation passes
 * The `#autoland` tag is included in the summary
+### As a reviewer, how do I ensure a diff doesn't land when it still requires changes?
+
+Make sure to set the status of the diff to `Request Changes`. That way, the autoland won't kick in.
+
+### Will it auto-land even if someone leaves comments?
+
+Yes. In order to block the diff, set the status to `Request Changes`.
+
+### Do I have to leave my PR tab open in order for it to auto-land?
+
+No. The extension will open a new tab in the background for you.
+
+### Do I have to keep the Chrome window open in order for it to auto-land?
+
+Yes. The extension does Chrome to be running.
+
+### Does it take review approval into account?
+
+Yes
 
 ### How does the extension work?
 
