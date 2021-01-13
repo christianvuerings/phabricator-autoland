@@ -1,6 +1,6 @@
 {
   "name": "phabricator-autoland",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "Autoland Phabricator revisions which are ready to land",
   "main": "index.js",
   "scripts": {

@@ -1,6 +1,6 @@
 {
   "name": "Phabricator Autoland",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "manifest_version": 2,
   "description": "Autoland Phabricator revisions which are ready to land",
   "background": {
