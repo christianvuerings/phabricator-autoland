@@ -53,7 +53,10 @@ async function fetchDiffs() {
           [
             ...diffDoc.querySelectorAll(".phui-property-list-section-header"),
           ].filter((el) => el.innerText.toLowerCase().includes("summary"))[0]
-            ?.nextSibling?.innerText ?? "";
+            ?.nextSibling?.innerHTML ?? "";
+
+        const sideColumn =
+          diffDoc.querySelector(".phui-side-column").innerHTML || "";
 
         const { className: buildStatusClassName } = [
           ...diffDoc.querySelectorAll(".phui-status-list-view a"),
@@ -69,6 +72,12 @@ async function fetchDiffs() {
           ?.closest(".phui-box-border")
           .querySelector(".phui-oi-list-view .phui-oi-table-row");
 
+        const tag = phab.const.AUTOLAND_TAG;
+        const tagPath = `/tag/${phab.const.AUTOLAND_TAG.toLocaleLowerCase().replace(
+          "#",
+          ""
+        )}`;
+
         return {
           ...item,
           buildStatus: Object.entries({
@@ -81,7 +90,10 @@ async function fetchDiffs() {
             }
             return acc;
           }, "unknown"),
-          includesAutolandTag: summary.includes(phab.const.AUTOLAND_TAG),
+          includesAutolandTag:
+            summary.includes(tag) ||
+            summary.toLowerCase().includes(tagPath) ||
+            sideColumn.includes(tagPath),
           activeOperations: activeOperationsRow
             ? [
                 {
