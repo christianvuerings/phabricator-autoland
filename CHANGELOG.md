@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.0.4 - 2021-01-30
+
+- Update screenshots & animated gif
 ## 0.0.3 - 2021-01-13
 
 - Allow "Autoland" project tag next to using a hashtag in the commit message
